@@ -302,11 +302,17 @@ p {
   padding: 5px 15px;
   cursor: pointer;
 }
-.tabs p:nth-child(1) {
+/* Active tab style */
+.tabs p.active {
+  background: #066a9b;
+  color: #fff;
+  border-radius: 4px;
+}
+/* .tabs p:nth-child(1) {
   background: #066a9b;
   color: #fff;
   border-radius: 8px;
-}
+} */
 .acc_head h3 {
   font-size: 16px;
   color: #046899;
@@ -345,6 +351,14 @@ p {
 .left {
   background: #e0f9ff;
   padding: 20px;
+}
+.total {
+  position: absolute;
+  top: 32%;
+  left: 30%;
+  /* transform: translate(-50px, -50px); */
+  text-align: center;
+  font-weight: 700;
 }
 .right {
   padding: 20px;
@@ -426,7 +440,7 @@ p {
 }
 .footer_section {
   border-top: 1px solid #80808030;
-  margin-top: 30px;
+  margin-top: 60px;
   padding: 25px 0px;
 }
 .footer_links {
@@ -441,6 +455,138 @@ p {
   color: #262626;
   font-size: 12px;
   text-decoration: underline;
+}
+
+.progress-container {
+  position: relative;
+  height: 32px;
+  background-color: #e9ecef;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4a6ee0, #6d8aec);
+  border-radius: 16px;
+  width: 70%; /* This will be dynamically set by JavaScript */
+  transition: width 0.5s ease;
+}
+
+.progress-markers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 0px;
+  /* padding: 0 8px; */
+}
+.segment-1 {
+  background-color: #4a6ee0;
+}
+
+.segment-2 {
+  background-color: #6d8aec;
+}
+
+.segment-3 {
+  background-color: #8fa6f0;
+}
+
+.segment-4 {
+  background-color: #b1c2f5;
+}
+
+.segment-5 {
+  background-color: #d3defa;
+}
+
+.marker {
+  position: relative;
+  width: 1px;
+  height: 100%;
+}
+
+.marker::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.marker-label {
+  position: absolute;
+  top: 4px;
+  left: 22px;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.score-display {
+  margin-bottom: 16px;
+}
+
+.score-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+.parent-progress {
+  background: #f7f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.score-percentile {
+  font-size: 14px;
+  color: #6c757d;
+  text-align: center;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.score-ranges {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.range {
+  text-align: center;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.range-value {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* tab */
+@media (min-width: 768px) and (max-width: 992px) {
+  .welcome_section {
+    grid-template-columns: 1fr;
+  }
+  .nb_report_card2 {
+    margin-top: 20px;
+  }
+  .parent_accounts {
+    grid-template-columns: 1fr;
+  }
+  .graph__parent {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* mobile device */
@@ -485,6 +631,10 @@ p {
   .footer_links {
     gap: 30px;
     justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .total {
+    left: 40%;
   }
 }
 

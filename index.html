@@ -208,17 +208,18 @@
                       <i class="bx bx-info-circle"></i>
                     </h3>
                     <div class="tabs">
-                      <p>All</p>
-                      <p>Open</p>
-                      <p>Close</p>
+                      <p class="tab active" data-filter="all">All</p>
+                      <p class="tab" data-filter="open">Open</p>
+                      <p class="tab" data-filter="close">Close</p>
                     </div>
                   </div>
                   <div class="account_details">
-                    <div class="acc_1">
+                    <div class="acc_1" style="position: relative;">
                       <img src="./assets/Group 27728.png" alt="" />
+                      <p class="total">Total <br /> Accounts <br /> 13</p>
                     </div>
                     <div class="acc_2_parent">
-                      <div class="acc_2">
+                      <div class="acc_2" data-type="close">
                         <p>
                           <span style="color: #7e79dd"
                             ><i class="bx bxs-circle"></i></span
@@ -226,7 +227,7 @@
                         </p>
                         <p>4</p>
                       </div>
-                      <div class="acc_2">
+                      <div class="acc_2" data-type="close">
                         <p>
                           <span style="color: #fde866"
                             ><i class="bx bxs-circle"></i></span
@@ -234,7 +235,7 @@
                         </p>
                         <p>1</p>
                       </div>
-                      <div class="acc_2">
+                      <div class="acc_2" data-type="open">
                         <p>
                           <span style="color: #99dbea"
                             ><i class="bx bxs-circle"></i></span
@@ -242,7 +243,7 @@
                         </p>
                         <p>2</p>
                       </div>
-                      <div class="acc_2">
+                      <div class="acc_2" data-type="open">
                         <p>
                           <span style="color: #67d995"
                             ><i class="bx bxs-circle"></i></span
@@ -350,7 +351,57 @@
                   Where You Stand
                   <i class="bx bx-info-circle"></i>
                 </h3>
+                <div class="parent-progress">
+                <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+            <div class="progress-markers">
+                <div class="marker">
+                    <span class="marker-label">15%</span>
+                </div>
+                <div class="marker">
+                    <span class="marker-label">22%</span>
+                </div>
+                <div class="marker">
+                    <span class="marker-label">26%</span>
+                </div>
+                <div class="marker">
+                    <span class="marker-label">18%</span>
+                </div>
+                <div class="marker">
+                    <span class="marker-label">20%</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="score-display" style="border-bottom: 1px solid rgb(222, 222, 222);">
+            
+            <div class="score-percentile" id="scorePercentile">Your NB Score</div>
+            <div class="score-value text-center" id="scoreValue">767</div>
+        </div>
+        
+        <div class="score-ranges">
+            <div class="range">
+                <div class="range-value">300-722</div>
+                <div class="range-label">Range 1</div>
+            </div>
+            <div class="range">
+                <div class="range-value">723-747</div>
+                <div class="range-label">Range 2</div>
+            </div>
+            <div class="range">
+                <div class="range-value">748-764</div>
+                <div class="range-label">Range 3</div>
+            </div>
+            <div class="range">
+                <div class="range-value">765-777</div>
+                <div class="range-label">Range 4</div>
+            </div>
+            <div class="range">
+                <div class="range-value">778-900</div>
+                <div class="range-label">Range 5</div>
+            </div>
               </div>
+               <div class="score-percentile" id="scorePercentile">Your NB Score lies in the top 70% in All Of India. <br />Based on the NB Data</div></div>
               <!-- footer -->
                <div class="footer_section">
                 <p class="text-center">© Copyright 2025 NetBramha Studio LLP. All Rights Reserved.</p>
