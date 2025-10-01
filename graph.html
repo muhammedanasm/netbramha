@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NB Score History</title>
+    <!-- Load Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .chart-container {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>NB SCORE HISTORY</h3>
+    <p>Trended view of the changes in your NB Score with every refresh.</p>
+
+    <div class="chart-container">
+      <canvas id="nbScoreChart"></canvas>
+    </div>
+
+    <script>
+      const ctx = document.getElementById("nbScoreChart");
+
+      new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+          datasets: [
+            {
+              label: "NB Score",
+              data: [null, null, 520, 580, null, 493, null, 510],
+              borderColor: "#2a9df4",
+              backgroundColor: "#2a9df4",
+              tension: 0.4,
+              fill: false,
+              pointRadius: 6,
+              pointHoverRadius: 8,
+              pointBackgroundColor: "#2a9df4",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              min: 300,
+              max: 900,
+              ticks: {
+                stepSize: 100,
+              },
+              title: {
+                display: true,
+                text: "NB Score",
+              },
+            },
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  return `Score: ${context.raw}`;
+                },
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
