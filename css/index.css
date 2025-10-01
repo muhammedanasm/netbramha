@@ -46,7 +46,15 @@ p {
   position: fixed;
   left: 0;
   height: 100%;
+  left: -260px; /* hidden by default */
+  transition: left 0.3s ease;
+  z-index: 1050;
 }
+/* Sidebar open on mobile */
+.sidebar.active {
+  left: 0;
+}
+
 .sidebar_info {
   padding: 20px 0px;
 }
@@ -433,4 +441,56 @@ p {
   color: #262626;
   font-size: 12px;
   text-decoration: underline;
+}
+
+/* mobile device */
+@media (min-width: 300px) and (max-width: 767px) {
+  .welcome_section {
+    grid-template-columns: 1fr;
+  }
+  .parent_accounts {
+    grid-template-columns: 1fr;
+  }
+  .graph__parent {
+    grid-template-columns: 1fr;
+  }
+  .dashboard_content {
+    padding-left: 0px;
+  }
+  .header_left {
+    display: none !important;
+  }
+  .header {
+    gap: 5px !important;
+  }
+  .right-sec {
+    display: none;
+  }
+  .nb_report_card2 {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .account_details {
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+  .acc_1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .acc_head h3 {
+    font-size: 14px;
+  }
+  .footer_links {
+    gap: 30px;
+    justify-content: space-between;
+  }
+}
+
+/* On desktop (>=768px), always show */
+@media (min-width: 768px) {
+  .sidebar {
+    left: 0 !important;
+  }
 }
